@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0B1020">
+    <meta name="description" content="Aprenda programação com uma experiência simples e moderna.">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Aprenda Programação</title>
+</head>
+<body>
+    <header id="header">
+        <h1>Aprenda <span>Programação</span></h1>
+        <p class="header-subtitle">SEU PRÓXIMO NÍVEL COMEÇA AQUI</p>
+    </header>
+
+    <main>
+        <section class="container">
+            <span class="eyebrow">
+                <span class="status-dot"></span>
+                SUA JORNADA DEV COMEÇA AQUI
+            </span>
+
+            <h2>Transforme curiosidade em <span>código.</span></h2>
+
+            <p id="description" class="description">
+                Bem-vindo à sua jornada na programação. Escolha uma linguagem,
+                explore novas possibilidades e comece a desenvolver suas habilidades.
+            </p>
+
+            <div class="language-selector-container">
+                <label for="language-select">ESCOLHA SUA LINGUAGEM</label>
+
+                <div class="language-actions">
+                    <select id="language-select" class="language-selector">
+                        <option value="python">Python</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="java">Java</option>
+                        <option value="csharp">C#</option>
+                    </select>
+
+                    <button id="start-button" type="button">
+                        Começar
+                        <span aria-hidden="true">→</span>
+                    </button>
+                </div>
+            </div>
+
+            <p id="selected-language" aria-live="polite">
+                Selecione uma linguagem para começar.
+            </p>
+        </section>
+
+        <section class="features" aria-label="Benefícios">
+            <article class="feature-card">
+                <span class="feature-icon purple">&lt;/&gt;</span>
+                <h3>Aprenda fazendo</h3>
+                <p>Desenvolva suas habilidades com a prática.</p>
+            </article>
+
+            <article class="feature-card">
+                <span class="feature-icon blue">{ }</span>
+                <h3>Explore linguagens</h3>
+                <p>Descubra diferentes formas de programar.</p>
+            </article>
+
+            <article class="feature-card">
+                <span class="feature-icon cyan">↗</span>
+                <h3>Evolua sempre</h3>
+                <p>Construa sua base e avance no seu ritmo.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>Feito para quem quer transformar ideias em código.</p>
+    </footer>
+</body>
+</html>
