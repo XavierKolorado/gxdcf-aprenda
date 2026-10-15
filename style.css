@@ -1129,3 +1129,65 @@ select:focus-visible {
         font-size: 0.74rem;
     }
 }
+
+.track-card {
+    min-height: 315px;
+}
+
+.track-card .track-goal {
+    margin-top: 7px;
+}
+
+.track-card p strong {
+    color: #D5DDEA;
+}
+
+.lesson-objective,
+.example-explanation,
+.common-errors {
+    margin: 8px 0 22px;
+    padding: 19px 21px;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    background: rgba(21, 28, 48, 0.58);
+}
+
+.lesson-objective {
+    border-color: rgba(56, 189, 248, 0.23);
+    background: rgba(56, 189, 248, 0.055);
+}
+
+.lesson-objective h2,
+.example-explanation h2,
+.common-errors h2 {
+    margin-bottom: 8px;
+    color: #DCE6F4;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+}
+
+.lesson-objective p,
+.example-explanation p,
+.common-errors li {
+    color: #B8C4D5;
+    font-size: 0.84rem;
+    line-height: 1.7;
+}
+
+.common-errors ul {
+    display: grid;
+    gap: 6px;
+    padding-left: 19px;
+}
+
+.common-errors li::marker {
+    color: #A78BFA;
+}
+
+@media (max-width: 600px) {
+    .lesson-objective,
+    .example-explanation,
+    .common-errors {
+        padding: 16px;
+    }
+}

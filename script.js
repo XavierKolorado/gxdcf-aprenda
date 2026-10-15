@@ -1,12 +1,13 @@
 const progressStorageKey = 'gxdcf-aprenda-progress-v1';
 
 const tracks = {
-    logic: { name: 'Lógica com Portugol', firstLesson: 'algoritmos' },
-    python: { name: 'Python', firstLesson: 'primeiro-programa' },
+    logic: { name: 'Lógica com Portugol', firstLesson: 'logica-introducao' },
+    python: { name: 'Python', firstLesson: 'py-introducao' },
     javascript: { name: 'JavaScript', firstLesson: 'js-primeiro-programa' },
     java: { name: 'Java', firstLesson: 'java-primeiro-programa' },
     csharp: { name: 'C#', firstLesson: 'csharp-primeiro-programa' }
 };
+const trackAliases = { portugol: 'logic' };
 
 const languageSelect = document.getElementById('language-select');
 const startButton = document.getElementById('start-button');
@@ -24,14 +25,15 @@ function readProgress() {
 }
 
 function openTrack(track) {
-    const selectedTrack = tracks[track] ? track : 'python';
+    const selectedTrack = tracks[track] ? track : trackAliases[track] || 'python';
     const progress = readProgress();
     const lastLesson = progress.lastLesson;
     const lesson = progress.selectedTrack === selectedTrack && lastLesson
         ? lastLesson
         : tracks[selectedTrack].firstLesson;
 
-    window.location.href = `curso.html?linguagem=${encodeURIComponent(selectedTrack)}&aula=${encodeURIComponent(lesson)}`;
+    const urlTrack = selectedTrack === 'logic' ? 'portugol' : selectedTrack;
+    window.location.href = `curso.html?linguagem=${encodeURIComponent(urlTrack)}&aula=${encodeURIComponent(lesson)}`;
 }
 
 function updateSelectedLanguage() {
@@ -52,7 +54,10 @@ courseCards.forEach((card) => {
 });
 
 const savedProgress = readProgress();
-if (tracks[savedProgress.selectedTrack]) {
-    languageSelect.value = savedProgress.selectedTrack;
+const savedTrack = tracks[savedProgress.selectedTrack]
+    ? savedProgress.selectedTrack
+    : trackAliases[savedProgress.selectedTrack];
+if (tracks[savedTrack]) {
+    languageSelect.value = savedTrack;
 }
 updateSelectedLanguage();

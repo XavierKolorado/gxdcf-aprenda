@@ -8,11 +8,11 @@ Abra `index.html` no navegador ou sirva a pasta com qualquer servidor estático 
 
 ## Trilhas disponíveis
 
-- Lógica de programação com pseudocódigo didático inspirado em Portugol (opcional).
-- Python, com uma trilha inicial de nove módulos.
+- Lógica de programação com pseudocódigo didático inspirado em Portugol (opcional, 10 módulos).
+- Python, com uma trilha inicial de 10 módulos.
 - JavaScript, Java e C#, com conteúdo introdutório identificado como tal.
 
-As aulas ficam no ambiente único `curso.html`; use parâmetros como `curso.html?linguagem=python&aula=py-variaveis` para abrir uma aula específica.
+As aulas ficam no ambiente único `curso.html`; use parâmetros como `curso.html?linguagem=python&aula=variaveis` ou `curso.html?linguagem=portugol` para abrir uma trilha. Os identificadores antigos de trilha e aula continuam aceitos.
 
 ## Progresso e exercícios
 
