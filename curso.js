@@ -84,66 +84,166 @@ const curriculum = {
             { name: '1. Introdução ao Python', lessons: [{
                 id: 'py-introducao', title: 'Conhecendo Python', duration: '6 min',
                 paragraphs: [
-                    'Python é uma linguagem de programação de propósito geral, usada em automação, análise de dados, aplicações web e ensino. Sua sintaxe procura deixar visível a estrutura do raciocínio.',
-                    'Um programa é uma sequência de instruções que transforma dados em resultados. Nesta trilha vamos começar com saídas simples e, aos poucos, combinar variáveis, condições e repetições.',
-                    'A plataforma apresenta exemplos para leitura e exercícios com respostas verificadas; ela não executa o código escrito pelo estudante.'
+                    'Python é uma linguagem de programação de propósito geral. Ela aparece em automação, análise de dados, aplicações web e ensino. Sua sintaxe costuma ser legível, mas ainda exige atenção a nomes, aspas, parênteses e indentação.',
+                    'Um programa é uma sequência de instruções que trabalha com dados para produzir um resultado. Nesta trilha, primeiro vamos ler pequenos programas e prever o resultado; depois combinaremos entrada, cálculos, decisões e repetições.',
+                    'Os exemplos são código Python para estudo. Os exercícios verificam respostas por comparação no navegador: o código que você digitar não é executado.'
                 ],
-                code: 'mensagem = "Estou começando a programar"\nprint(mensagem)',
-                exercise: { type: 'choice', prompt: 'Qual afirmação descreve melhor a proposta desta trilha?', options: ['Aprender conceitos e praticar Python passo a passo', 'Executar qualquer código digitado diretamente nesta página', 'Aprender apenas a decorar palavras-chave'], answer: 0, explanation: 'A trilha ensina conceitos progressivamente por meio de exemplos e exercícios validados.' }
+                code: 'mensagem = "Olá, Python!"\nprint(mensagem)',
+                exercise: {
+                    type: 'choice',
+                    prompt: 'Considere as duas linhas do exemplo. O que aparece na saída quando a segunda linha é executada?',
+                    options: ['Olá, Python!', 'mensagem', 'Nada: a atribuição não mostra o valor'],
+                    answer: 0,
+                    explanation: 'A variável mensagem guarda o texto; print(mensagem) apresenta o valor guardado.',
+                    incorrectExplanation: 'Atribuir um valor guarda informação sem mostrá-la. A segunda linha pede que Python apresente o conteúdo da variável.'
+                }
             }] },
             { name: '2. print() e comentários', lessons: [{
                 id: 'primeiro-programa', title: 'Seu primeiro programa', duration: '6 min',
-                paragraphs: ['A função print() apresenta valores na saída do programa. O texto entre aspas é uma string; cada chamada a print() normalmente encerra a saída com uma nova linha.', 'Um comentário começa com # e serve para explicar uma decisão ou contexto a quem lê o código. Python ignora o comentário ao executar o programa. Escreva comentários úteis, não uma tradução óbvia de cada linha.', 'Os exemplos são código para estudo: esta página não executa o código que você digita.'],
-                code: '# Apresenta uma saudação\nprint("Olá, mundo!")\nprint("Python em português")',
-                exercise: { type: 'fill', prompt: 'Complete a função que mostra o texto na saída: ____("Olá!")', answer: 'print', explanation: 'print() apresenta o texto informado. As aspas delimitam a string.' }
+                paragraphs: [
+                    'print() apresenta um ou mais valores. Texto literal precisa ficar entre aspas; o nome de uma variável, por outro lado, é escrito sem aspas para que Python procure o valor associado a ele.',
+                    'Por padrão, cada chamada a print() termina com uma quebra de linha. Um comentário começa com # e ajuda a explicar uma intenção ou uma decisão que não está óbvia; Python ignora o comentário.',
+                    'Prever a saída é uma forma útil de praticar leitura de código, mas este ambiente não executa o Python: o exercício abaixo compara a alternativa selecionada com a resposta definida.'
+                ],
+                code: 'cidade = "Recife"\nprint("Olá,", cidade)  # apresenta texto e valor\nprint("Bem-vinda!")',
+                exercise: {
+                    type: 'choice',
+                    prompt: 'Qual é a saída, em duas linhas, deste exemplo?',
+                    options: ['"Olá, Recife" e "Bem-vinda!" em linhas separadas', '"Olá, Recife" e "Bem-vinda!" na mesma linha', 'O nome cidade e o comentário também aparecem'],
+                    answer: 1,
+                    explanation: 'print apresenta o valor da variável sem suas aspas e termina cada chamada com uma nova linha. O comentário não aparece.',
+                    incorrectExplanation: 'Acompanhe cada chamada separadamente: cidade é substituída pelo texto armazenado, o comentário é ignorado e o print padrão começa a próxima saída em outra linha.'
+                }
             }] },
             { name: '3. Variáveis e tipos de dados', lessons: [{
                 id: 'py-variaveis', title: 'Variáveis e tipos básicos', duration: '8 min',
-                paragraphs: ['Atribua um valor a um nome usando =. Python identifica o tipo a partir do valor atribuído; entre os tipos comuns estão int, float, str e bool.', 'Escolha nomes descritivos e use aspas para textos. O operador = atribui um valor; == compara dois valores.'],
-                code: 'nome = "Lia"\nidade = 16\naltura = 1.65\nestudante = True',
-                exercise: { type: 'fill', prompt: 'Complete para exibir a variável nome: ____ (nome)', answer: 'print', explanation: 'A chamada print(nome) apresenta o valor armazenado na variável.' }
+                paragraphs: [
+                    'Uma variável associa um nome a um valor. O sinal = faz uma atribuição: depois de pontos = 3, o nome pontos representa o inteiro 3. Em Python, não é preciso declarar o tipo antes; ele é inferido a partir do valor.',
+                    'Quatro tipos comuns são int (inteiro), float (número com parte decimal), str (texto) e bool (True ou False). Aspas fazem parte da escrita de textos, enquanto números e valores lógicos não levam aspas.',
+                    'Use nomes que expliquem o dado e mantenha a diferença entre atribuir (=) e comparar (==).'
+                ],
+                code: 'preco_unitario = 4.5\nquantidade = 3\nsubtotal = preco_unitario * quantidade\nproduto_disponivel = True',
+                exercise: {
+                    type: 'choice',
+                    prompt: 'No exemplo, qual é o valor e o tipo de subtotal?',
+                    options: ['13.5, float', '13.5, str', '"4.5 * 3", str'],
+                    answer: 0,
+                    explanation: '4.5 multiplicado por 3 resulta em 13.5, que é um número decimal (float).',
+                    incorrectExplanation: 'Siga a atribuição: os nomes recebem valores numéricos, não o texto da expressão. Como o preço é decimal, a multiplicação também produz um valor decimal.'
+                }
             }] },
             { name: '4. input() e conversão de tipos', lessons: [{
                 id: 'py-entrada', title: 'Lendo dados', duration: '7 min',
-                paragraphs: ['input() lê texto digitado pelo usuário. Para usar a resposta como número, converta-a explicitamente com int() ou float().', 'Ao converter entrada, considere que o valor digitado pode não estar no formato esperado. Validação de entradas será importante em programas maiores.'],
-                code: 'nome = input("Seu nome: ")\nprint(f"Olá, {nome}!")\nidade = int(input("Sua idade: "))',
-                exercise: { type: 'choice', prompt: 'Qual conversão transforma um texto numérico em número inteiro?', options: ['str()', 'int()', 'bool()'], answer: 1, explanation: 'int() converte um valor compatível para inteiro.' }
+                paragraphs: [
+                    'input() mostra uma pergunta opcional e espera o usuário digitar uma resposta. O valor retornado é sempre texto (str), inclusive quando a pessoa digita algarismos.',
+                    'Para fazer contas, converta o texto: int("14") produz o inteiro 14 e float("2.5") produz um decimal. A conversão só funciona se o texto tiver um formato numérico compatível; entradas inválidas precisam ser tratadas em programas mais completos.',
+                    'A f-string f"Olá, {nome}" insere o valor de nome no texto. As chaves indicam uma expressão Python dentro da string.'
+                ],
+                code: 'resposta = input("Quantos livros você leu? ")\nquantidade = int(resposta)\nproximo_ano = quantidade + 1\nprint(f"Meta para o próximo ano: {proximo_ano}")',
+                exercise: {
+                    type: 'short',
+                    prompt: 'Se a resposta digitada for "14", qual número será calculado para proximo_ano?',
+                    answer: '15',
+                    explanation: 'input() devolve o texto "14"; int converte para o número 14, e somar 1 resulta em 15.',
+                    incorrectExplanation: 'Primeiro identifique a conversão: int transforma "14" em 14, então a soma é numérica (14 + 1), não uma concatenação de textos.'
+                }
             }] },
             { name: '5. Operadores', lessons: [{
                 id: 'py-operadores', title: 'Calculando e comparando', duration: '8 min',
-                paragraphs: ['Python oferece +, -, * e / para operações aritméticas. // faz divisão inteira e % calcula o resto.', 'Comparações como ==, !=, < e >= produzem True ou False e podem orientar uma decisão.'],
-                code: 'total = 7 + 3\nresto = 10 % 3\nmaior = total > 8',
-                exercise: { type: 'short', prompt: 'Qual valor a expressão 17 % 5 produz?', answer: '2', explanation: '17 dividido por 5 deixa resto 2; o operador % devolve esse resto.' }
+                paragraphs: [
+                    'Os operadores +, -, * e / fazem soma, subtração, multiplicação e divisão. // descarta a parte decimal da divisão; % devolve o resto. Parênteses deixam explícita a ordem desejada, e multiplicação/divisão são avaliadas antes de soma/subtração.',
+                    'Operadores relacionais como ==, !=, <, <=, > e >= comparam valores e produzem bool: True ou False. O resultado pode ser guardado numa variável ou usado diretamente por uma condição.',
+                    'Não confunda = (atribuição) com == (comparação).'
+                ],
+                code: 'valor = 2 + 3 * 4\natingiu_meta = valor >= 14\nprint(atingiu_meta)',
+                exercise: {
+                    type: 'short',
+                    prompt: 'Sem executar o código, que valor booleano recebe atingiu_meta no exemplo? Responda True ou False.',
+                    answer: 'true',
+                    explanation: 'A multiplicação acontece primeiro: 3 * 4 = 12. Depois 2 + 12 = 14, e 14 >= 14 é True.',
+                    incorrectExplanation: 'Respeite a precedência: faça a multiplicação antes da soma. Em seguida compare o resultado com 14; >= inclui também a igualdade.'
+                }
             }] },
             { name: '6. Condicionais', lessons: [{
                 id: 'py-condicoes', title: 'Decisões com if', duration: '8 min',
-                paragraphs: ['Use if, elif e else para escolher um caminho. Os dois-pontos iniciam um bloco e a indentação define quais instruções pertencem a ele.', 'Condições podem ser combinadas com and, or e not.'],
-                code: 'nota = 8\nif nota >= 7:\n    print("Aprovado")\nelse:\n    print("Continue praticando")',
-                exercise: { type: 'fill', prompt: 'Complete a condição: if idade ____ 18:', answer: '>=', explanation: 'O operador >= verifica se idade é maior ou igual a 18.' }
+                paragraphs: [
+                    'if avalia uma condição e executa seu bloco quando ela é verdadeira. elif testa outra condição apenas quando as anteriores foram falsas; else recebe os casos restantes. A ordem importa: Python usa o primeiro bloco cuja condição seja verdadeira.',
+                    'Os dois-pontos abrem cada bloco e a indentação identifica as instruções dentro dele. and exige que duas condições sejam verdadeiras; or exige pelo menos uma; not inverte o valor lógico.',
+                    'Ao criar faixas (por exemplo, níveis ou intervalos de nota), teste valores nos limites para confirmar que nenhum caso ficou de fora.'
+                ],
+                code: 'temperatura = 28\nif temperatura >= 30:\n    clima = "quente"\nelif temperatura >= 20:\n    clima = "agradável"\nelse:\n    clima = "frio"\nprint(clima)',
+                exercise: {
+                    type: 'choice',
+                    prompt: 'Com temperatura igual a 20, qual valor fica em clima?',
+                    options: ['"quente"', '"agradável"', '"frio"'],
+                    answer: 1,
+                    explanation: '20 não satisfaz temperatura >= 30, mas satisfaz temperatura >= 20; por isso, o elif seleciona "agradável".',
+                    incorrectExplanation: 'Avalie os testes de cima para baixo. 20 falha no primeiro teste, mas atende ao limite inclusivo do elif (20 >= 20).'
+                }
             }] },
             { name: '7. Laços while e for', lessons: [{
                 id: 'py-repeticao', title: 'Repetindo com for e while', duration: '9 min',
-                paragraphs: ['for percorre itens de uma sequência. range(inicio, fim) gera números até, mas sem incluir, o limite fim.', 'while repete enquanto uma condição for verdadeira. Atualize os valores envolvidos para que o laço termine quando esperado.'],
-                code: 'for numero in range(1, 4):\n    print(numero)\n\ncontador = 0\nwhile contador < 3:\n    contador += 1',
-                exercise: { type: 'challenge', prompt: 'Quantos números range(1, 5) gera?', answer: '4|quatro', explanation: 'São os números 1, 2, 3 e 4; o limite final não entra.' }
+                paragraphs: [
+                    'for percorre cada item de uma sequência ou os valores produzidos por range(). Em range(inicio, fim), inicio entra e fim não entra; por isso range(1, 4) visita 1, 2 e 3.',
+                    'while repete enquanto sua condição for verdadeira. É útil quando a quantidade de repetições depende de uma situação. Atualize no corpo os dados que influenciam a condição, para que o laço termine.',
+                    'Use for quando a sequência ou quantidade é conhecida e while quando a repetição depende de uma condição. Antes de acompanhar a saída, anote o valor das variáveis a cada passagem.'
+                ],
+                code: 'soma_pares = 0\nfor numero in range(1, 5):\n    if numero % 2 == 0:\n        soma_pares += numero\n\ncontador = 3\nwhile contador > 0:\n    contador -= 1',
+                exercise: {
+                    type: 'challenge',
+                    prompt: 'Ao final dos laços, quais valores têm soma_pares e contador? Responda no formato total,contador.',
+                    answer: '6,0',
+                    explanation: 'range(1, 5) visita 1, 2, 3 e 4; só 2 e 4 entram na soma, que resulta em 6. O while reduz contador de 3 até 0.',
+                    incorrectExplanation: 'No for, filtre os valores pares da faixa (o 5 não entra) e some-os. No while, acompanhe contador: ele diminui uma unidade em cada passagem até a condição deixar de ser verdadeira.'
+                }
             }] },
             { name: '8. Listas', lessons: [{
                 id: 'py-listas', title: 'Trabalhando com listas', duration: '8 min',
-                paragraphs: ['Listas agrupam valores em uma sequência. Em Python, o primeiro índice é 0; len(lista) informa quantos itens ela contém.', 'Use append() para adicionar ao final e percorra itens com for quando precisar processar cada valor.'],
-                code: 'frutas = ["pera", "uva"]\nfrutas.append("maçã")\nprint(frutas[0])  # pera',
-                exercise: { type: 'choice', prompt: 'Qual é o índice do primeiro item de uma lista Python?', options: ['0', '1', '-1'], answer: 0, explanation: 'Em Python, a indexação começa em zero.' }
+                paragraphs: [
+                    'Uma lista guarda vários valores em uma sequência que pode ser consultada e alterada. Os índices começam em zero: lista[0] é o primeiro item e lista[1] é o segundo. len(lista) informa quantos itens existem.',
+                    'append(valor) acrescenta um item ao final da lista. Índices negativos contam a partir do fim: lista[-1] é o último elemento. Um índice inexistente causa IndexError, então confira o tamanho antes de acessar posições variáveis.',
+                    'Um for pode percorrer os próprios valores da lista quando você precisa processar cada elemento.'
+                ],
+                code: 'tempos = [12, 9, 15]\ntempos.append(8)\nmelhora = tempos[0] - tempos[-1]\nprint(melhora)',
+                exercise: {
+                    type: 'short',
+                    prompt: 'Depois do append, qual é o resultado de tempos[1] + tempos[-1]?',
+                    answer: '17',
+                    explanation: 'A lista fica [12, 9, 15, 8]. tempos[1] é 9, tempos[-1] é 8, e a soma é 17.',
+                    incorrectExplanation: 'Atualize a lista após append antes de olhar os índices: o índice 1 continua apontando para o segundo item, e -1 aponta para o novo último item.'
+                }
             }] },
             { name: '9. Funções', lessons: [{
                 id: 'py-funcoes', title: 'Criando funções', duration: '9 min',
-                paragraphs: ['def define uma função. Parâmetros recebem valores e return devolve um resultado para quem chamou a função.', 'Uma função pequena, com nome claro, ajuda a reaproveitar e testar uma tarefa.'],
-                code: 'def dobro(valor):\n    return valor * 2\n\nresultado = dobro(5)  # 10',
-                exercise: { type: 'fill', prompt: 'Complete a palavra-chave que devolve o resultado: ____ valor * 2', answer: 'return', explanation: 'return encerra a função e devolve o valor indicado.' }
+                paragraphs: [
+                    'def cria uma função com um nome e parâmetros entre parênteses. O corpo é indentado. Parâmetros funcionam como nomes locais que recebem os argumentos informados na chamada.',
+                    'return devolve um valor para o ponto em que a função foi chamada e encerra a execução dela. print() apenas apresenta algo; não substitui return quando outra parte do programa precisa usar o resultado.',
+                    'Dividir uma solução em funções pequenas facilita reaproveitar e testar cada regra separadamente.'
+                ],
+                code: 'def calcular_troco(preco, valor_pago):\n    return valor_pago - preco\n\ntroco = calcular_troco(7, 10)\nprint(troco * 2)',
+                exercise: {
+                    type: 'short',
+                    prompt: 'Qual valor é apresentado quando calcular_troco(8, 13) retorna o troco e esse resultado é multiplicado por 2?',
+                    answer: '10',
+                    explanation: 'A função devolve 13 - 8 = 5. A chamada usa esse retorno na multiplicação: 5 * 2 = 10.',
+                    incorrectExplanation: 'Calcule primeiro o valor devolvido pela função usando os argumentos na ordem dos parâmetros; só depois aplique a multiplicação feita pelo código chamador.'
+                }
             }] },
             { name: '10. Desafios práticos', lessons: [{
-                id: 'py-desafios', title: 'Desafio: contar itens', duration: '10 min',
-                paragraphs: ['Use uma variável acumuladora para somar valores durante uma repetição. Comece com um valor inicial adequado e atualize-o a cada item.', 'Antes de programar, experimente o algoritmo com uma lista curta e calcule o resultado esperado à mão.'],
-                code: 'numeros = [2, 4, 6]\ntotal = 0\nfor numero in numeros:\n    total += numero\nprint(total)  # 12',
-                exercise: { type: 'challenge', prompt: 'Qual será a saída para a lista [3, 5, 2] somando todos os itens?', answer: '10', explanation: '3 + 5 + 2 resulta em 10.' }
+                id: 'py-desafios', title: 'Desafio: contar aprovações', duration: '12 min',
+                paragraphs: [
+                    'Este desafio combina valores digitados, conversão, comparação, função, lista, repetição e acumulador. Primeiro siga o programa à mão para entender cada etapa; depois, tente escrever uma solução semelhante no seu editor Python.',
+                    'O corte é recebido como texto por input() e convertido para inteiro. A função aprovada decide se uma nota alcança esse corte. O for percorre todas as notas e o contador aumenta somente para as aprovadas.',
+                    'O exercício abaixo é conferido comparando sua resposta com um valor esperado. Ele não roda o código Python nem executa o código que você escrever.'
+                ],
+                code: 'def foi_aprovada(nota, corte):\n    return nota >= corte\n\ncorte = int(input("Nota mínima: "))\nnotas = [5, 7, 10, 6]\naprovacoes = 0\nfor nota in notas:\n    if foi_aprovada(nota, corte):\n        aprovacoes += 1\nprint(aprovacoes)',
+                exercise: {
+                    type: 'challenge',
+                    prompt: 'Se a pessoa digitar 6 como nota mínima, quantas notas da lista [5, 7, 10, 6] serão contadas como aprovadas?',
+                    answer: '3',
+                    explanation: 'int converte a entrada para 6. A função considera notas maiores ou iguais ao corte; 7, 10 e 6 passam, então o contador termina em 3.',
+                    incorrectExplanation: 'Compare cada nota com o corte usando >=, que inclui a igualdade. Conte apenas as notas aprovadas: 5 fica abaixo de 6; as outras três atendem ao critério.'
+                }
             }] }
         ]
     },
@@ -279,54 +379,54 @@ const lessonDetails = {
     },
     python: {
         'py-introducao': {
-            objective: 'Conhecer a proposta da trilha e identificar uma variável como um nome associado a um valor.',
-            codeExplanation: 'A atribuição associa uma frase ao nome mensagem; a segunda instrução apresenta esse valor. A sintaxe é legível, mas cada caractere continua tendo significado.',
+            objective: 'Conhecer a proposta da trilha e prever como uma instrução simples apresenta uma mensagem.',
+            codeExplanation: 'A atribuição associa a string "Olá, Python!" ao nome mensagem. Em seguida, print recebe o nome da variável e apresenta seu valor.',
             commonErrors: ['Achar que Python serve apenas para um tipo de projeto.', 'Confundir o exemplo didático com código executado por esta página.']
         },
         'primeiro-programa': {
             objective: 'Usar print() para apresentar texto e # para registrar um comentário.',
-            codeExplanation: 'O comentário começa com # e não é tratado como uma instrução. Cada chamada print() apresenta uma string e termina a linha.',
-            commonErrors: ['Esquecer as aspas que delimitam uma string.', 'Esperar que o comentário após # seja apresentado na tela.']
+            codeExplanation: 'A variável cidade guarda "Recife". print mostra o texto e o valor da variável; a próxima chamada produz uma nova linha. Tudo após # é comentário e não aparece.',
+            commonErrors: ['Colocar o nome da variável entre aspas, o que mostraria o nome em vez de seu valor.', 'Esperar que o comentário após # apareça na saída.']
         },
         'py-variaveis': {
-            objective: 'Criar variáveis e reconhecer int, float, str e bool por seus valores.',
-            codeExplanation: 'Python infere o tipo: idade é inteiro, altura é decimal, nome é texto e estudante é booleano. A atribuição usa =.',
-            commonErrors: ['Usar = para comparar valores; para comparação use ==.', 'Esquecer aspas no valor de texto ou usar True com letras minúsculas.']
+            objective: 'Criar variáveis e reconhecer int, float, str e bool; acompanhar como os tipos influenciam cálculos.',
+            codeExplanation: 'preco_unitario guarda um float e quantidade guarda um int. O operador * calcula o subtotal 13.5; produto_disponivel guarda um bool.',
+            commonErrors: ['Colocar aspas em um número que será usado em cálculos.', 'Usar = para comparar valores; para comparação use ==.']
         },
         'py-entrada': {
-            objective: 'Ler um texto com input() e converter uma entrada numérica antes de fazer cálculos.',
-            codeExplanation: 'input() retorna texto. int(...) converte o texto da idade em inteiro; a f-string inclui o nome na saudação.',
-            commonErrors: ['Somar diretamente o texto retornado por input() a um número.', 'Digitar letras quando o programa espera um número.']
+            objective: 'Ler texto com input(), convertê-lo para inteiro e usar o resultado em um cálculo.',
+            codeExplanation: 'input() lê uma resposta como texto; int converte esse texto para número inteiro. A soma calcula a meta do ano seguinte e a f-string a inclui na mensagem.',
+            commonErrors: ['Somar diretamente o texto retornado por input() a um número.', 'Esperar que int converta palavras como "dez" automaticamente em número.']
         },
         'py-operadores': {
-            objective: 'Aplicar operações aritméticas, o operador de resto e comparações.',
-            codeExplanation: 'total recebe 10, resto recebe 1 e maior recebe True, pois 10 é maior que 8.',
-            commonErrors: ['Confundir / com //: o primeiro faz divisão comum.', 'Confundir =, que atribui, com ==, que compara.']
+            objective: 'Aplicar precedência aritmética e comparação para calcular um valor booleano.',
+            codeExplanation: 'A multiplicação 3 * 4 acontece antes da soma, então valor fica 14. A comparação inclusiva >= torna atingiu_meta igual a True.',
+            commonErrors: ['Fazer a soma antes da multiplicação sem parênteses.', 'Confundir =, que atribui, com ==, que compara.']
         },
         'py-condicoes': {
-            objective: 'Selecionar um bloco usando if e else, com indentação consistente.',
-            codeExplanation: 'Como 8 é maior ou igual a 7, Python executa o primeiro print. O bloco else fica reservado para notas menores.',
-            commonErrors: ['Omitir os dois-pontos depois de if ou else.', 'Indentar o bloco de maneira inconsistente.']
+            objective: 'Selecionar um bloco com if, elif e else e entender a ordem das condições.',
+            codeExplanation: 'O primeiro teste verifica se a temperatura é pelo menos 30. Se falhar, elif testa se é pelo menos 20. Os casos restantes chegam ao else.',
+            commonErrors: ['Esquecer que elif só é avaliado quando os testes anteriores falham.', 'Omitir os dois-pontos ou indentar um bloco incorretamente.']
         },
         'py-repeticao': {
-            objective: 'Percorrer uma faixa com for e repetir enquanto uma condição for verdadeira.',
-            codeExplanation: 'range(1, 4) percorre 1, 2 e 3. No while, o contador aumenta até deixar de ser menor que 3.',
-            commonErrors: ['Esperar que range inclua o limite final.', 'Esquecer de atualizar o contador de um while.']
+            objective: 'Filtrar valores em um for e acompanhar a condição de parada de um while.',
+            codeExplanation: 'range(1, 5) visita 1, 2, 3 e 4; o if adiciona apenas os pares. O while reduz contador até que contador > 0 seja falso.',
+            commonErrors: ['Esperar que range inclua o limite final.', 'Não atualizar uma variável usada na condição de while, criando um laço que não termina.']
         },
         'py-listas': {
-            objective: 'Criar uma lista, acrescentar um item e acessar posições começando pelo índice zero.',
-            codeExplanation: 'append() adiciona maçã ao fim. frutas[0] seleciona o primeiro elemento, pera.',
-            commonErrors: ['Acessar o primeiro item pelo índice 1.', 'Tentar acessar uma posição além do fim da lista.']
+            objective: 'Alterar uma lista e combinar índices positivos e negativos para calcular um valor.',
+            codeExplanation: 'append acrescenta 8. O exemplo calcula a diferença entre o primeiro tempo e o último tempo da lista atualizada.',
+            commonErrors: ['Esquecer que os índices começam em zero.', 'Presumir que append retorna uma nova lista; ele altera a lista existente.']
         },
         'py-funcoes': {
-            objective: 'Definir uma função com def, receber um parâmetro e devolver um valor com return.',
-            codeExplanation: 'dobro(5) associa 5 ao parâmetro valor, calcula 5 * 2 e devolve 10 para resultado.',
-            commonErrors: ['Esquecer os dois-pontos ou a indentação do corpo.', 'Usar print() esperando que ele substitua return.']
+            objective: 'Definir uma função que calcula um valor e usar o retorno em outra expressão.',
+            codeExplanation: 'calcular_troco recebe preço e valor pago, devolve a diferença, e a chamada usa esse resultado antes de multiplicá-lo por 2.',
+            commonErrors: ['Inverter a ordem dos argumentos e obter um valor inesperado.', 'Usar print() esperando que ele substitua return.']
         },
         'py-desafios': {
-            objective: 'Usar uma variável acumuladora para somar os itens de uma lista.',
-            codeExplanation: 'total começa em zero; cada passagem do for adiciona o próximo número. Ao final, print apresenta a soma 12.',
-            commonErrors: ['Não inicializar total antes do laço.', 'Reiniciar total dentro do laço e perder as somas anteriores.']
+            objective: 'Combinar conversão de entrada, comparação, função, lista, laço e acumulador para classificar notas.',
+            codeExplanation: 'O corte é convertido para inteiro; a função compara cada nota com esse limite. O laço percorre a lista e aumenta aprovacoes somente quando a função retorna True.',
+            commonErrors: ['Esquecer que input() fornece texto e comparar esse texto com números.', 'Não incluir uma nota igual ao corte quando a regra usa >=.']
         }
     },
     javascript: {
@@ -454,6 +554,11 @@ function lessonKey(trackId, lessonId) {
     return `${trackId}:${lessonId}`;
 }
 
+function exerciseKey(trackId, lessonId) {
+    const version = trackId === 'python' ? ':v2' : '';
+    return `${lessonKey(trackId, lessonId)}${version}`;
+}
+
 function saveProgress() {
     try {
         localStorage.setItem(progressStorageKey, JSON.stringify(progress));
@@ -558,6 +663,9 @@ function renderExercise(exercise, key) {
     const prompt = document.createElement('p');
     prompt.className = 'exercise-prompt';
     prompt.textContent = exercise.prompt;
+    const validationNote = document.createElement('p');
+    validationNote.className = 'exercise-validation-note';
+    validationNote.textContent = 'O sistema compara sua resposta com a solução esperada; não executa código.';
     const form = document.createElement('form');
     form.className = 'exercise-form';
     form.noValidate = true;
@@ -630,9 +738,9 @@ function renderExercise(exercise, key) {
         if (correct) {
             feedback.textContent = `Muito bem! ${exercise.explanation}`;
         } else if (exercise.type === 'choice') {
-            feedback.textContent = `Ainda não. A resposta correta é “${exercise.options[exercise.answer]}”. ${exercise.explanation}`;
+            feedback.textContent = `Ainda não. ${exercise.incorrectExplanation || `A resposta correta é “${exercise.options[exercise.answer]}”. ${exercise.explanation}`}`;
         } else {
-            feedback.textContent = `Ainda não. Uma resposta esperada é “${exercise.answer.split('|')[0]}”. ${exercise.explanation}`;
+            feedback.textContent = `Ainda não. ${exercise.incorrectExplanation || `Uma resposta esperada é “${exercise.answer.split('|')[0]}”. ${exercise.explanation}`}`;
         }
         if (correct && !progress.solvedExercises.includes(key)) {
             progress.solvedExercises.push(key);
@@ -643,7 +751,7 @@ function renderExercise(exercise, key) {
             }
         }
     });
-    section.append(label, heading, prompt, form);
+    section.append(label, heading, prompt, validationNote, form);
     return section;
 }
 
@@ -715,7 +823,7 @@ function renderLesson() {
     });
     errors.append(errorsHeading, errorsList);
 
-    const exercise = renderExercise(lesson.exercise, lessonKey(currentTrack, lesson.id));
+    const exercise = renderExercise(lesson.exercise, exerciseKey(currentTrack, lesson.id));
     lessonContent.replaceChildren(intro, objective, body, example, exampleExplanation, errors, exercise);
 }
 
