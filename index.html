@@ -1,81 +1,120 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0B1020">
-    <meta name="description" content="Aprenda programação com uma experiência simples e moderna.">
+    <meta name="description" content="Aprenda lógica de programação e linguagens de programação com aulas práticas em português.">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
-    <title>Aprenda Programação</title>
+    <title>GXDCF Aprenda — programação no seu ritmo</title>
 </head>
-<body>
+<body class="home-page">
     <header id="header">
-        <h1>Aprenda <span>Programação</span></h1>
+        <a class="brand" href="index.html" aria-label="GXDCF Aprenda, página inicial">
+            <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
+            <span>GXDCF <span>Aprenda</span></span>
+        </a>
         <p class="header-subtitle">SEU PRÓXIMO NÍVEL COMEÇA AQUI</p>
     </header>
 
     <main>
-        <section class="container">
+        <section class="container home-hero">
             <span class="eyebrow">
                 <span class="status-dot"></span>
                 SUA JORNADA DEV COMEÇA AQUI
             </span>
-
-            <h2>Transforme curiosidade em <span>código.</span></h2>
-
-            <p id="description" class="description">
-                Bem-vindo à sua jornada na programação. Escolha uma linguagem,
-                explore novas possibilidades e comece a desenvolver suas habilidades.
+            <h1>Transforme curiosidade em <span>código.</span></h1>
+            <p class="description">
+                Aprenda programação em português, com explicações diretas, exemplos e exercícios.
+                Escolha uma trilha e avance no seu ritmo — sem precisar criar uma conta.
             </p>
 
             <div class="language-selector-container">
-                <label for="language-select">ESCOLHA SUA LINGUAGEM</label>
-
+                <label for="language-select">ESCOLHA POR ONDE COMEÇAR</label>
                 <div class="language-actions">
                     <select id="language-select" class="language-selector">
                         <option value="python">Python</option>
+                        <option value="logic">Lógica com Portugol</option>
                         <option value="javascript">JavaScript</option>
                         <option value="java">Java</option>
                         <option value="csharp">C#</option>
                     </select>
-
                     <button id="start-button" type="button">
-                        Começar
-                        <span aria-hidden="true">→</span>
+                        Começar a aprender <span aria-hidden="true">→</span>
                     </button>
                 </div>
             </div>
-
-            <p id="selected-language" aria-live="polite">
-                Selecione uma linguagem para começar.
-            </p>
+            <p id="selected-language" aria-live="polite"></p>
+            <a class="resume-link" href="curso.html">Continuar de onde parei <span aria-hidden="true">↗</span></a>
         </section>
 
-        <section class="features" aria-label="Benefícios">
-            <article class="feature-card">
-                <span class="feature-icon purple">&lt;/&gt;</span>
-                <h3>Aprenda fazendo</h3>
-                <p>Desenvolva suas habilidades com a prática.</p>
-            </article>
+        <section class="tracks-section" aria-labelledby="tracks-title">
+            <div class="section-heading">
+                <span class="eyebrow">ESCOLHA SUA TRILHA</span>
+                <h2 id="tracks-title">Um caminho para cada objetivo.</h2>
+                <p>Você pode começar pela lógica ou aprender diretamente na linguagem que escolheu.</p>
+            </div>
+            <div class="track-grid">
+                <a class="track-card logic-card" href="curso.html?linguagem=logic&aula=algoritmos" data-track-link="logic">
+                    <span class="track-tag">PARA COMEÇAR DO ZERO</span>
+                    <span class="track-icon purple" aria-hidden="true">∑</span>
+                    <h3>Lógica com Portugol</h3>
+                    <p>Entenda algoritmos, decisões, repetições e estruturas fundamentais com pseudocódigo em português.</p>
+                    <span class="track-meta">9 módulos <span aria-hidden="true">·</span> Trilha opcional</span>
+                    <span class="track-cta">Explorar lógica <span aria-hidden="true">→</span></span>
+                </a>
+                <a class="track-card" href="curso.html?linguagem=python&aula=primeiro-programa" data-track-link="python">
+                    <span class="track-tag">TRILHA PRINCIPAL</span>
+                    <span class="track-icon blue" aria-hidden="true">Py</span>
+                    <h3>Python</h3>
+                    <p>Comece do básico e pratique variáveis, decisões, laços, coleções e funções com exercícios guiados.</p>
+                    <span class="track-meta">9 módulos <span aria-hidden="true">·</span> Curso inicial</span>
+                    <span class="track-cta">Aprender Python <span aria-hidden="true">→</span></span>
+                </a>
+                <a class="track-card" href="curso.html?linguagem=javascript&aula=js-primeiro-programa" data-track-link="javascript">
+                    <span class="track-tag">TRILHA INICIAL</span>
+                    <span class="track-icon cyan" aria-hidden="true">JS</span>
+                    <h3>JavaScript</h3>
+                    <p>Conheça a sintaxe essencial da linguagem que dá vida às páginas e aplicações web.</p>
+                    <span class="track-meta">3 módulos <span aria-hidden="true">·</span> Conteúdo introdutório</span>
+                    <span class="track-cta">Explorar JavaScript <span aria-hidden="true">→</span></span>
+                </a>
+                <a class="track-card" href="curso.html?linguagem=java&aula=java-primeiro-programa" data-track-link="java">
+                    <span class="track-tag">TRILHA INICIAL</span>
+                    <span class="track-icon orange" aria-hidden="true">J</span>
+                    <h3>Java</h3>
+                    <p>Aprenda a estrutura de um programa Java, tipos, condições e repetição em uma introdução prática.</p>
+                    <span class="track-meta">3 módulos <span aria-hidden="true">·</span> Conteúdo introdutório</span>
+                    <span class="track-cta">Explorar Java <span aria-hidden="true">→</span></span>
+                </a>
+                <a class="track-card" href="curso.html?linguagem=csharp&aula=csharp-primeiro-programa" data-track-link="csharp">
+                    <span class="track-tag">TRILHA INICIAL</span>
+                    <span class="track-icon violet" aria-hidden="true">C#</span>
+                    <h3>C#</h3>
+                    <p>Veja como escrever seu primeiro programa e trabalhar com variáveis, decisões e laços.</p>
+                    <span class="track-meta">3 módulos <span aria-hidden="true">·</span> Conteúdo introdutório</span>
+                    <span class="track-cta">Explorar C# <span aria-hidden="true">→</span></span>
+                </a>
+            </div>
+        </section>
 
-            <article class="feature-card">
-                <span class="feature-icon blue">{ }</span>
-                <h3>Explore linguagens</h3>
-                <p>Descubra diferentes formas de programar.</p>
-            </article>
-
-            <article class="feature-card">
-                <span class="feature-icon cyan">↗</span>
-                <h3>Evolua sempre</h3>
-                <p>Construa sua base e avance no seu ritmo.</p>
-            </article>
+        <section class="how-section" aria-labelledby="how-title">
+            <div class="section-heading">
+                <span class="eyebrow">SIMPLES ASSIM</span>
+                <h2 id="how-title">Aprenda fazendo, um passo por vez.</h2>
+            </div>
+            <div class="how-grid">
+                <article class="how-step"><span>01</span><h3>Escolha uma trilha</h3><p>Comece por lógica ou vá direto para a linguagem que quer aprender.</p></article>
+                <article class="how-step"><span>02</span><h3>Estude uma aula</h3><p>Leia a explicação, acompanhe exemplos e pratique sem sair da página.</p></article>
+                <article class="how-step"><span>03</span><h3>Acompanhe seu progresso</h3><p>Suas aulas e exercícios ficam salvos neste dispositivo.</p></article>
+            </div>
+            <p class="learning-note">Os exercícios validam suas respostas no navegador. Nesta versão, o código digitado não é executado.</p>
         </section>
     </main>
 
     <footer>
-        <p>Feito para quem quer transformar ideias em código.</p>
+        <p>GXDCF Aprenda <span aria-hidden="true">·</span> Feito para quem quer transformar ideias em código.</p>
     </footer>
 </body>
 </html>

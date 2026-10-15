@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0B1020">
+    <meta name="description" content="Aprenda programação com aulas, exemplos e exercícios práticos.">
+    <link rel="stylesheet" href="style.css">
+    <script src="curso.js" defer></script>
+    <title>Aprender — GXDCF Aprenda</title>
+</head>
+<body class="course-page">
+    <header class="course-header">
+        <a class="brand" href="index.html" aria-label="GXDCF Aprenda, página inicial">
+            <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
+            <span>GXDCF <span>Aprenda</span></span>
+        </a>
+        <a class="back-home" href="index.html"><span aria-hidden="true">←</span> Início</a>
+    </header>
+
+    <div class="learning-layout">
+        <aside class="course-sidebar" aria-label="Navegação do curso">
+            <div class="sidebar-top">
+                <label for="track-select">SUA TRILHA</label>
+                <select id="track-select" class="track-select" aria-label="Selecionar trilha de aprendizagem"></select>
+                <div class="progress-summary">
+                    <div class="progress-label">
+                        <span>Progresso da trilha</span>
+                        <strong id="progress-value">0%</strong>
+                    </div>
+                    <div class="progress-track" role="progressbar" aria-label="Progresso da trilha" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                        <span id="progress-bar"></span>
+                    </div>
+                    <p id="progress-count">0 de 0 aulas concluídas</p>
+                </div>
+            </div>
+            <nav id="lesson-navigation" class="lesson-navigation" aria-label="Módulos e aulas"></nav>
+            <p class="sidebar-note">Seu progresso fica salvo neste dispositivo.</p>
+        </aside>
+
+        <main class="lesson-main" id="lesson-main">
+            <div class="lesson-topline">
+                <div>
+                    <a class="course-home-link" href="index.html">Todas as trilhas</a>
+                    <span class="breadcrumb-separator" aria-hidden="true">/</span>
+                    <span id="current-track-name"></span>
+                </div>
+                <span id="lesson-completion-status" class="completion-status"></span>
+            </div>
+            <article id="lesson-content" aria-live="polite" aria-busy="false"></article>
+            <div class="lesson-navigation-actions">
+                <button id="previous-lesson" class="button button-secondary" type="button">← Aula anterior</button>
+                <button id="complete-lesson" class="button button-primary" type="button">Marcar como concluída</button>
+                <button id="next-lesson" class="button button-secondary" type="button">Próxima aula →</button>
+            </div>
+            <p class="course-disclaimer">Os exercícios conferem respostas e alternativas no navegador. Nenhum código digitado é executado.</p>
+        </main>
+    </div>
+</body>
+</html>
